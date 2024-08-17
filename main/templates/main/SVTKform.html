@@ -1,0 +1,48 @@
+{% extends 'main/check_SVTK.html' %}
+
+{% block main2 %}
+<form class="form-inline">
+    <h3>ДАННЫЕ О ПРОВЕРЯЮЩЕМ</h3>
+    <label>Проверяемое подразделение:</label>
+    <br><label><l>Проверяемое подразделение №1:</l></label>
+    <select id="P1" name="P1">
+        <option value='apple'>Саша</option>
+        <option value='banana'>Банан</option>
+        <option value='orange'>Апельсин</option>
+        <option value='orange'>Апельсин</option>
+        <option value='orange'>eeei</option>
+        <option value='orange'>ijmiom</option>
+        <option value='orange'>mkm</option>
+    </select>
+
+    <br><label><l>Проверяемое подразделение №2:</l></label>
+    <select id="P2" name="P2">
+        <option value='apple'>Лесной</option>
+        <option value='banana'>Банан</option>
+        <option value='orange'>Апельсин</option>
+        <option value='orange'>Апельсин</option>
+        <option value='orange'>eeei</option>
+        <option value='orange'>ijmiom</option>
+        <option value='orange'>mkm</option>
+    </select>
+
+    <br><label><l>Проверяемое подразделение №3:</l></label>
+    <select id="P3" name="P3">
+        <option value='apple'>Гномик</option>
+        <option value='banana'>Банан</option>
+        <option value='orange'>Апельсин</option>
+        <option value='orange'>Апельсин</option>
+        <option value='orange'>eeei</option>
+        <option value='orange'>ijmiom</option>
+        <option value='orange'>mkm</option>
+    </select>
+
+    <br><label for="Date">Дата:</label><input type="date" id="Date" placeholder="дд/мм/гг">
+    <br><label for="ACT">Номер акта:</label><input type="text" id="ACT" placeholder="СВТК-ДЗО-СП №пп/ГТ">
+    <br><label for="FIO">ФИО проверяющего:</label><input type="text" id="FIO" placeholder="Фамилия Имя Отчество">
+    <br><label for="DOLGNOST">Должность проверяющего:</label><input type="text" id="DOLGNOST" placeholder="Должность">
+    <br><label for="GROUP">Группа по ЭБ:</label><input type="text" id="GROUP" placeholder="Группа">
+    <br><label for="LEVCONT">Уровень контроля:</label><input type="text" id="LEVCONT" placeholder="Уровень контроля">
+    <br><br><input type="submit" value="Редактировать"><input type="submit" value="Сохранить">
+</form>
+{% endblock %}

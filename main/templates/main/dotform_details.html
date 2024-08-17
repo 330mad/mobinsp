@@ -1,0 +1,16 @@
+{% extends 'main/about.html' %}
+
+{% block main2 %}
+<form class="form-inline">
+    <h3>ДАННЫЕ О ПРОВЕРЯЮЩЕМ</h3>
+        <input type="text" placeholder="Подразделение №1: {{ dotforming.pp1 }}" class="form-control" disabled> <br>
+        <input type="text" placeholder="Подразделение №2: {{ dotforming.pp2 }}" class="form-control" disabled><br>
+        <input type="text" placeholder="Подразделение №3: {{ dotforming.pp3 }}" class="form-control" disabled><br>
+        <input type="text" placeholder="Дата проверки: {{ dotforming.data }}" class="form-control" disabled><br>
+        <input type="text" placeholder="Номер акта: {{ dotforming.act_nubmer }}" class="form-control" disabled><br>
+        <input type="text" placeholder="ФИО проверяющего: {{ dotforming.fio }}" class="form-control" disabled><br>
+        <input type="text" placeholder="Должность проверяющего: {{ dotforming.dolgnost }}" class="form-control" disabled><br>
+        <input type="text" placeholder="Группа по ЭБ: {{ dotforming.ab_group }}" class="form-control" disabled><br>
+        <input type="text" placeholder="Уровень контроля: {{ dotforming.c_level }}" class="form-control" disabled><br>
+</form>
+{% endblock %}

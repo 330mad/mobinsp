@@ -1,0 +1,131 @@
+{% extends 'main/check_SVTK.html' %}
+
+{% block main2 %}
+<form class="form-inline" id="violations-form">
+    <h3>Программа проверки</h3>
+
+    <br><label>Программа комплексной проверки:</label>
+    <select id="P0" name="P0">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+    </select>
+
+    <br><label>Тема:</label>
+    <select id="P1" name="P1">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+    </select>
+
+    <br><label for="pp">#п\п<input type="text" id="pp" placeholder="1" disabled></label>
+    <br><label for="theme">Вопрос<input type="text" id="theme" placeholder="Вопрос 1" disabled></label>
+    <br><label for="voil">Выявление нарушение<input type="text" id="voil" placeholder="Введите нарушение"></label>
+
+    <br><label>Основной признак:</label>
+    <select id="P2" name="P2">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+    </select>
+
+    <br><label>Доп признак:</label>
+    <select id="P3" name="P3">
+        <option value='apple'>ОЗП</option>
+        <option value='banana'>ОРД</option>
+        <option value='orange'>Вп</option>
+        <option value='orange'>Д</option>
+        <option value='orange'>ПВП</option>
+        <option value='orange'>С</option>
+        <option value='orange'>Т</option>
+    </select>
+
+    <br><label for="link">Ссылка на НТД<input type="text" id="link" placeholder=" из системы"></label>
+    <br><label for="upload-photo">Вставить фотографию</label><input type="file" accept="image/*" id="upload-photo" capture="environment">
+    <br><br><input type="submit" id="Red" value="Редактировать"><input type="submit" id="Save" value="Сохранить">
+
+</form>
+
+<button type="button" id="add-form-btn2">Добавить форму</button>
+
+<!-- Сюда будут добавляться новые формы -->
+<div id="new-forms-container2"></div>
+
+<script>
+    let formCount = 1;
+
+    document.getElementById('add-form-btn2').addEventListener('click', function() {
+        formCount++;
+
+        const newForm = document.createElement('form');
+        newForm.className = 'form-inline';
+        newForm.innerHTML = `
+            <br><label><l>Программа комплексной проверки:</l></label>
+            <select id="P0" name="P0">
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+            </select>
+
+            <br><label><l>Тема:</l></label>
+            <select id="P1" name="P1">
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+            </select>
+
+            <br><label for="pp${formCount}">#п\п<input type="text" id="pp${formCount}" placeholder="${formCount}" disabled></label>
+            <br><label for="theme${formCount}">Тема\Вопрос<input type="text" id="theme${formCount}" placeholder="Вопрос ${formCount}" disabled></label>
+            <br><label for="voil${formCount}">Выявление нарушения<input type="text" id="voil${formCount}" placeholder="Введите нарушение"></label>
+
+            <br><label><l>Основной признак:</l></label>
+            <select id="P2${formCount}" name="P2${formCount}">
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+            </select>
+
+            <br><label><l>Доп признак:</l></label>
+            <select id="P3${formCount}" name="P3${formCount}">
+                <option value='apple'>ОЗП</option>
+                <option value='banana'>ОРД</option>
+                <option value='orange'>Вп</option>
+                <option value='orange'>Д</option>
+                <option value='orange'>ПВП</option>
+                <option value='orange'>С</option>
+                <option value='orange'>Т</option>
+            </select>
+
+            <br><label for="link${formCount}">Ссылка на НТД<input type="text" id="link${formCount}" placeholder=" из системы"></label>
+            <br><label for="upload-photo${formCount}">Вставить фотографию</label><input type="file" accept="image/*" id="upload-photo${formCount}" capture="environment">
+            <br><br><input type="submit" id="Red${formCount}" value="Редактировать"><input type="submit" id="Save${formCount}" value="Сохранить">
+        `;
+
+        document.getElementById('new-forms-container2').appendChild(newForm);
+    });
+</script>
+{% endblock %}

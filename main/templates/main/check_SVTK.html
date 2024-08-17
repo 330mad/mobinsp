@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}SVTK{% endblock %}
+
+
+{% block content %}
+    <div class="mainsvtk">
+        <p>Данный раздел отвечает за внесение данных о нарушениях в рамках СВТК</p>
+        <input type="checkbox" id="tri" name="tri" class="del"/><label for="tri" class="del">ИНСТРУКЦИЯ ПО ЗАПОЛНЕНИЮ</label>
+        <div>
+            <br><li><a1>1. Откройне необходимую для заполнения вкладку,</a1> находящиеся ниже</a></li>
+            <br><li><a1>2. Заполните форму,</a1> открывшуюся для после нажатия вкладки</a></li>
+            <br><li><a1>3. Заполните все вкладки поочередно</a1> для полноты вносимой информации</a></li><br><br>
+        </div>
+
+        <a href="{% url 'SVTKform' %}"><i class="fa fa-address-card-o" aria-hidden="true"></i><liDOT>   Внести данные проверяющего</liDOT></a>
+        <a href="{% url 'SVTKprog' %}"><i class="fa fa-check-square-o" aria-hidden="true"></i><liDOT>   Программа проверки</liDOT></a>
+    </div>
+    <pupu>
+        {% block main2 %}{% endblock %}
+    </pupu>
+{% endblock %}

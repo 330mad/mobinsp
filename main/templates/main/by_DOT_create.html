@@ -1,0 +1,21 @@
+{% extends 'main/by_DOT.html' %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="creation">
+        <h3>НАРУШЕНИЯ ПО ТЕМАТИКЕ "ДЕНЬ ОХРАНЫ ТРУДА"</h3><br><br>
+        {% csrf_token %}
+        {{ form.np }}<br>
+        {{ form.theme }}<br>
+        {{ form.qust }}<br>
+        {{ form.vi_viol }}<br>
+        {{ form.osp }}<br>
+        {{ form.dop_osp }}<br>
+        {{ form.ntd_link }}<br>
+        {{ form.photo }}<br>
+        <span>{{error}}</span>
+        <button class="btn btn-success" type="submit">Сохранить</button>
+    </div>
+</form>
+{% endblock %}

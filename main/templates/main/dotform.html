@@ -1,0 +1,26 @@
+{% extends 'main/about.html' %}
+
+{% block main2 %}
+<form class="form-inline">
+    {% if dot_form %}
+        {% for el in dot_form %}
+                <h3>ДАННЫЕ О ПРОВЕРЯЮЩЕМ</h3><br>
+                <input type="text" placeholder="Подразделение №1: {{ el.pp1 }}" class="form-control" disabled> <br>
+                <input type="text" placeholder="Подразделение №2: {{ el.pp2 }}" class="form-control" disabled><br>
+                <input type="text" placeholder="Подразделение №3: {{ el.pp3 }}" class="form-control" disabled><br>
+                <input type="text" placeholder="Дата проверки: {{ el.data }}" class="form-control" disabled><br>
+                <input type="text" placeholder="Номер акта: {{ el.act_nubmer }}" class="form-control" disabled><br>
+                <input type="text" placeholder="ФИО проверяющего: {{ el.fio }}" class="form-control" disabled><br>
+                <input type="text" placeholder="Должность проверяющего: {{ el.dolgnost }}" class="form-control" disabled><br>
+                <input type="text" placeholder="Группа по ЭБ: {{ el.ab_group }}" class="form-control" disabled><br>
+                <input type="text" placeholder="Уровень контроля: {{ el.c_level }}" class="form-control" disabled><br>
+
+                <a href="{% url 'DOTupdate' el.id %}" class="btn btn-info">Редактировать</a>
+                <a href="{% url 'DOTdelete' el.id %}" class="btn btn-danger">Удалить</a>
+        {% endfor %}
+    {% else %}
+        <h3>ДАННЫЕ О ПРОВЕРЯЮЩЕМ ОТСУТСТВУЮТ </h3><br><br>
+            <a href="{% url 'DOTcreate' %}" class="btn btn-info" type="submit"> + </a>
+    {% endif %}
+</form>
+{% endblock %}

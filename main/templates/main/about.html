@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}День охраны труда{% endblock %}
+
+{% block content %}
+    <div class="maindot">
+        <p>Данный раздел отвечает за внесение данных о нарушениях в рамках Дня охраны труда</p>
+        <input type="checkbox" id="dva" name="dva" class="del"/><label for="dva" class="del">ИНСТРУКЦИЯ ПО ЗАПОЛНЕНИЮ</label>
+        <div>
+            <br><ai href="one"><a1>1. Откройне необходимую для заполнения вкладку,</a1> находящиеся ниже</ai>
+            <br><ai href="two"><a1>2. Заполните форму,</a1> открывшуюся для после нажатия вкладки</ai>
+            <br><ai href="three"><a1>3. Заполните все вкладки поочередно</a1> для полноты вносимой информации</ai><br><br>
+        </div>
+        <a href="{% url 'DOTform' %}"><i class="fa fa-address-card-o" aria-hidden="true"></i><liDOT>    Внести данные проверяющего</liDOT></a>
+        <a href="{% url 'byDOT' %}"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><liDOT>      Нарушения по тематике ДОТ</liDOT></a>
+        <a href="{% url 'outDOT' %}"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><liDOT>     Нарушения вне тематики ДОТ</liDOT></a>
+        <a href="{% url 'lastDOT' %}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><liDOT>        Проверка устранения нарушений по предыдущему ДОТ</liDOT></a>
+    </div>
+    <pupu>
+        {% block main2 %}{% endblock %}
+    </pupu>
+{% endblock %}

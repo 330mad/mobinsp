@@ -1,0 +1,23 @@
+{% extends 'main/dotform.html' %}
+
+{% block content %}
+
+<form method="post">
+    <div class="creation">
+        <h3>ДАННЫЕ О ПРОВЕРЯЮЩЕМ</h3>
+        {% csrf_token %}
+        {{ form.pp1 }}<br>
+        {{ form.pp2 }}<br>
+        {{ form.pp3 }}<br>
+        {{ form.data }}<br>
+        {{ form.act_nubmer }}<br>
+        {{ form.fio }}<br>
+        {{ form.dolgnost }}<br>
+        {{ form.ab_group }}<br>
+        {{ form.c_level }}<br>
+        <span>{{error}}</span>
+
+        <button class="btn btn-success" type="submit">Сохранить</button>
+    </div>
+</form>
+{% endblock %}

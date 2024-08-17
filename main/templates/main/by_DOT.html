@@ -1,0 +1,27 @@
+{% extends 'main/about.html' %}
+
+{% block main2 %}
+<form class="form-inline" id="violations-form">
+    <div class="append">
+    <h3>Нарушения по тематике "День охраны труда"</h3><br><br>
+    {% if by_dot %}
+        {% for el in by_dot %}
+            <input type="text" placeholder="№п/п: {{ el.np }}" class="form-control" disabled> <br>
+            <input type="text" placeholder="Тема №: {{ el.theme }}" class="form-control" disabled><br>
+            <input type="text" placeholder="Вопрос №: {{ el.qust }}" class="form-control" disabled><br>
+            <textarea placeholder="Выявленные нарушения: {{ el.vi_viol }}" class="form-control" disabled></textarea><br>
+            <input type="text" placeholder="Основной признак: {{ el.osp }}" class="form-control" disabled><br>
+            <input type="text" placeholder="Доп. признак: {{ el.dop_osp }}" class="form-control" disabled><br>
+            <input type="text" placeholder="Ссылка на НТД: {{ el.ntd_link }}" class="form-control" disabled><br>
+            <img src="{{ el.photo.url }}" class="form-control">
+            <a href="{% url 'byDOTupdate' el.id %}" class="btn btn-c1">Редактировать</a>
+            <a href="{% url 'byDOTdelete' el.id %}" class="btn btn-c2">Удалить</a>
+        {% endfor %}
+    {% else %}
+        <h3>ДАННЫЕ О НАРУШЕНИЯХ ПО ТЕМАТИКЕ "ДЕНЬ ОХРАНЫ ТРУДА" ОТСУТСТВУЮТ </h3><br><br>
+    {% endif %}
+    </div>
+    <a href="{% url 'byDOTcreate' %}" class="btn btn-info" type="submit"> + </a>
+
+</form>
+{% endblock %}

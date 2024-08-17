@@ -1,0 +1,12 @@
+{% extends 'main/dotform.html' %}
+{% block title%}Удаление записи о проверяющем{%endblock%}
+
+{% block content%}
+<div class="creation">
+<h3>Удалить информацию о проверяющем?</h3><br>
+<form method="post" >
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Удалить</button>
+</form>
+</div>
+{% endblock %}
